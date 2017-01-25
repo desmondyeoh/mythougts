@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @post = Post.new
-    @posts = current_user.posts
+    @posts = current_user.posts.order(created_at: :desc)
   end
 
   def tag
@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
 
   def search
     @query = params[:query]
-    @posts = Post.where('lower(content) LIKE ?', "%#{@query.downcase}%")
+    @posts = Post.where('lower(content) LIKE ?', "%#{@query.downcase}%").order(created_at: :desc)
   end
 
   private

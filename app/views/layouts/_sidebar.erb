@@ -8,7 +8,7 @@
 <ul class="directory">
   <li>
     <%= link_to "Your thoughts (#{current_user.posts.count})", root_path %>
-    <% Tag.all.each do |tag| %>
+    <% Tag.has_post.each do |tag| %>
       <li>
         <%= link_to "#{tag.name} (#{tag.posts.count})", tag_path(tag.name) %>
       </li>
