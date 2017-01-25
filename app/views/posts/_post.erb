@@ -1,0 +1,9 @@
+<div class="post-box">
+  <p class="post-content"><%= highlight_hashtag(post.content) %></p>
+  <p class="post-details">
+    <span><%= post.created_at %></span>
+    <span><%= link_to 'Edit', edit_post_path(post)%></span>
+    <span><%= link_to 'Del', post_path(post), method: :delete, data: {confirm: "Are you sure?"}%></span>
+  </p>
+  <hr>
+</div>

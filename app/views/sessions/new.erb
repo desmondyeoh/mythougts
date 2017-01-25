@@ -1,0 +1,21 @@
+<h1>Sign In</h1>
+<% if notice %>
+  <div class="alert alert-warning">
+    <%= notice %>
+  </div>
+<% end %>
+
+<%= form_for :session, url:sessions_path do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+  <br>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+  <br>
+    <%= f.submit "Sign in" %>
+  <br>
+  <%= link_to "New User? Sign up here!", signup_path %>
+<% end %>
